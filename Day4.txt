@@ -1,0 +1,109 @@
+Class---------------------------------------------------------------
+Class란?
+변수, 함수를 한덩이로 묶은 것
+
+첫번째 글자 => 대문자
+
+생성자 함수 : 변수를 초기화 하는 용도
+필드 : 클래에서 정의된 변수
+메서드 : 클래스에서 정의된 함수
+
+Q) 도전 1
+class Zergling:
+    def __init__(self):
+        self.hp = 20
+        self.mana = 50
+    def run(self):
+        print('뛴다')
+        self.hp -= 1
+        self.mana += 1
+    def show_status(self):
+        print(f'HP : {self.hp}')
+        print(f'HP : {self.mana}')
+
+z1 = Zergling()
+z2 = Zergling()
+
+z1.run()
+z2.show_status()
+
+for i in range(5):
+    z2.run()
+z2.show_status()
+
+Q) 도전 2
+class GameMachine:
+    def __init__(self):
+        self.coins = 0
+    def input_coin(self, amount):
+        if amount > 5:
+            return
+        if self.coins + amount > 10:
+            return
+        self.coins += amount
+    def play_game(self):
+        if self.coins < 1:
+            print('코인을 넣어주세요')
+            return
+        self.coins -= 1
+        print('게임 재밌다')
+    def show_status(self):
+        print(f'남은 코인은 : {self.coins}입니다')
+
+gm = GameMachine()
+
+gm.input_coin(2)
+gm.show_status()
+gm.play_game()
+gm.show_status()
+
+Q) 도전 3 질문
+변수 개수? 3개
+abc
+
+객체 개수? 5개
+3, 리스트, 클래스, 15, 2 5개
+리스트안에 객체 바꾸는 것 => 객체아님(할당)
+
+할당 개수? 5개
+객체가 5개기 때문에
+
+Q) 도전 4 타이어
+class Tire:
+    def run(self):
+        print('런 출력')
+
+class ChildTire1(Tire):
+    def ran(self):
+        print('랜 출력')
+
+class ChildTire2(Tire):
+    def run(self):
+        print('런런 출력')
+    def ron(self):
+        print('론 출력')
+
+t1 = Tire()
+t2 = ChildTire1()
+t3 = ChildTire2()
+
+t1.run()
+t2.ran()
+t3.run()
+t3.ron()
+
+데이터 사이언스 ===========================================
+
+numpy 사용하는 이유?
+1. 빠르다?
+2. 벡터 연산에 강점 (원래 배열x2 -> 두번 출력, numpy는 가능)
+ex code)
+import numpy as np
+
+lst = [1, 2, 3, 4, 5]
+result_lst = lst * 2
+print(result_lst)
+
+numpy_array = np.array([1, 2, 3, 4, 5])
+result_array = numpy_array * 2
+print(result_array)
